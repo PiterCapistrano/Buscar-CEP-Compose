@@ -28,6 +28,7 @@ fun EditTextComponent(
             focusedLabelColor = Green
         ),
         modifier = modifier,
-        keyboardOptions = keyboardOptions
+        keyboardOptions = keyboardOptions,
+        maxLines = 1
     )
 }
