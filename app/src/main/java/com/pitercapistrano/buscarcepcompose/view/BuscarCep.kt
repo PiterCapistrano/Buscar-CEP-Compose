@@ -190,7 +190,13 @@ fun BuscarCep(navController: NavController, viewModel: BuscarCepViewModel = hilt
                 )
 
                 ButtonComponent(
-                    onClick = {  },
+                    onClick = {
+                       if (inputCep.isEmpty() || inputLogradouro.isEmpty() || inputBairro.isEmpty() || inputCidade.isEmpty() || inputEstado.isEmpty()){
+                            Toast.makeText(context,"Preencha todos os campos para avançar!", Toast.LENGTH_SHORT).show()
+                       }else{
+                           navController.navigate("detalhesEndereco/${inputCep}/${inputLogradouro}/${inputBairro}/${inputCidade}/${inputEstado}")
+                       }
+                    },
                     text = "Avançar",
                     modifier = Modifier
                         .padding(20.dp, 10.dp)
