@@ -8,9 +8,9 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
+import javax.inject.Inject
 
-class DataSource {
+class DataSource @Inject constructor() {
 
     private val retrofit: ViaCep = Retrofit.Builder()
         .addConverterFactory(GsonConverterFactory.create())
@@ -18,7 +18,7 @@ class DataSource {
         .build()
         .create(ViaCep::class.java)
 
-    fun RespostaApi(cep: String, respostaApi: RespostaApi){
+    fun respostaApi(cep: String, respostaApi: RespostaApi){
         if (cep.isEmpty()){
             respostaApi.onFailure("Preencha o campo de CEP!")
         }else{

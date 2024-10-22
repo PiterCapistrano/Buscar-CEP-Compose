@@ -19,7 +19,7 @@ fun ButtonComponent(
     modifier: Modifier
 ){
     Button(
-        onClick = { onClick },
+        onClick = onClick,
         colors = ButtonDefaults.buttonColors(
             containerColor = Green
         ),
